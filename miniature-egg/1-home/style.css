@@ -8,7 +8,7 @@ body {
     height: 100vh;
     overflow: hidden;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background-color: #ffd966;
+    background-color: #f2f200;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,9 +18,9 @@ body {
     width: 500px;
     height: 500px;
     padding: 2rem;
-    background-color: white;
-    border: 3px solid #333;
-    border-radius: 8px;
+    background-color: whitesmoke;
+    border: 2px solid white;
+    border-radius: 10px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
