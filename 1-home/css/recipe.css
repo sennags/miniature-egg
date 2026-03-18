@@ -1,0 +1,98 @@
+.main-icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1rem;
+}
+
+.recipe-content {
+    width: 100%;
+    max-width: 500px;
+    text-align: left;
+}
+
+.recipe-section {
+    margin-bottom: 1.5rem;
+}
+
+.recipe-section h2 {
+    font-size: 1.2rem;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 0.25rem;
+}
+
+.recipe-section ul,
+.recipe-section ol {
+    padding-left: 1.5rem;
+    color: var(--text-light);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.recipe-section li {
+    margin-bottom: 0.25rem;
+}
+
+.timer-section {
+    text-align: center;
+    padding-top: 1rem;
+    border-top: 1px dashed var(--border-color);
+}
+
+.timer-display {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    font-family: 'Courier New', monospace;
+    margin: 0.5rem 0;
+}
+
+.timer-btn {
+    background: var(--nav-cta-bg);
+    color: var(--nav-cta-color);
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 999px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+}
+
+.timer-btn:hover {
+    background: var(--nav-cta-hover);
+    transform: scale(1.05);
+}
+
+.timer-btn:active {
+    transform: scale(0.98);
+}
+
+.timer-presets {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+}
+
+.preset-btn {
+    background: var(--bg-card);
+    color: var(--text-dark);
+    border: 1px solid var(--border-color);
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.preset-btn:hover {
+    background: var(--border-color);
+    color: var(--bg-card);
+}
+
+.preset-btn.active {
+    background: var(--text-dark);
+    color: var(--bg-card);
+}

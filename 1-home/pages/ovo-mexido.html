@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ovo Mexido - Miniature Egg</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/recipe.css">
+</head>
+<body>
+    <div class="topbar-trigger"></div>
+    <nav class="topbar" id="topbar">
+        <a href="home.html" class="nav-back">←</a>
+        <a href="#" class="nav-cta">Sobre</a>
+    </nav>
+
+    <main id="board">
+        <img src="../Icons/mexido.svg" alt="Ovo Mexido" class="main-icon">
+        <h1>Ovo Mexido</h1>
+        
+        <div class="recipe-content">
+            <section class="recipe-section">
+                <h2>Ingredientes</h2>
+                <ul>
+                    <li>2 ovos</li>
+                    <li>1 colher de sopa de manteiga</li>
+                    <li>Sal a gosto</li>
+                    <li>Salsinha picada (opcional)</li>
+                </ul>
+            </section>
+
+            <section class="recipe-section">
+                <h2>Modo de Preparo</h2>
+                <ol>
+                    <li>Bater os ovos em uma tigela</li>
+                    <li>Derreter a manteiga na frigideira em fogo baixo</li>
+                    <li>Adicionar os ovos batidos</li>
+                    <li>Mexer constantemente com uma espátula</li>
+                    <li>Retirar do fogo quando ainda estiver levemente úmido</li>
+                    <li>Servir imediatamente com salsinha</li>
+                </ol>
+            </section>
+
+            <section class="recipe-section timer-section">
+                <h2>Tempo de Preparo</h2>
+                <div class="timer-display" id="timer">3:00</div>
+                <button class="timer-btn" id="timerBtn">Iniciar</button>
+            </section>
+        </div>
+    </main>
+
+    <footer class="egg-footer" id="footer">
+        <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">
+            <span class="theme-icon">◐</span>
+        </button>
+        <span class="footer-text">Miniature Egg</span>
+    </footer>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/timer.js"></script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ovo Frito - Miniature Egg</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/recipe.css">
+</head>
+<body>
+    <div class="topbar-trigger"></div>
+    <nav class="topbar" id="topbar">
+        <a href="home.html" class="nav-back">←</a>
+        <a href="#" class="nav-cta">Sobre</a>
+    </nav>
+
+    <main id="board">
+        <img src="../Icons/ovo-frito.svg" alt="Ovo Frito" class="main-icon">
+        <h1>Ovo Frito</h1>
+        
+        <div class="recipe-content">
+            <section class="recipe-section">
+                <h2>Ingredientes</h2>
+                <ul>
+                    <li>1 ovo</li>
+                    <li>1 colher de sopa de óleo ou manteiga</li>
+                    <li>Sal a gosto</li>
+                </ul>
+            </section>
+
+            <section class="recipe-section">
+                <h2>Modo de Preparo</h2>
+                <ol>
+                    <li>Aquecer a frigideira em fogo médio</li>
+                    <li>Adicionar o óleo ou manteiga</li>
+                    <li>Quebrar o ovo na frigideira</li>
+                    <li>Temperar com sal</li>
+                    <li>Esperar 2-3 minutos até a clara firmar</li>
+                    <li>Servir imediatamente</li>
+                </ol>
+            </section>
+
+            <section class="recipe-section timer-section">
+                <h2>Tempo de Preparo</h2>
+                <div class="timer-display" id="timer">3:00</div>
+                <button class="timer-btn" id="timerBtn">Iniciar</button>
+            </section>
+        </div>
+    </main>
+
+    <footer class="egg-footer" id="footer">
+        <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">
+            <span class="theme-icon">◐</span>
+        </button>
+        <span class="footer-text">Miniature Egg</span>
+    </footer>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/timer.js"></script>
+</body>
+</html>
