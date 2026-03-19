@@ -30,5 +30,3 @@
     ├── omelete.html
     └── ovo-mexido.html
 ```
-
-Feito com ajuda do CLAUDE.
