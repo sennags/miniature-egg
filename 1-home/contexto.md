@@ -1,4 +1,4 @@
-# Análise Sênior - Miniature Egg
+## Miniature Egg
 
 ## Visão Geral
 
