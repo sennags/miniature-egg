@@ -227,6 +227,12 @@ body {
     padding: 4rem 0 4rem;
 }
 
+.prep-cards-center {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 4rem;
+}
+
 .prep-card {
     background: var(--card-bg);
     border: 1px solid var(--border);
@@ -271,8 +277,42 @@ body {
 .prep-card-icon {
     width: 80px;
     height: 80px;
-    margin-bottom: 1.5rem;
+    margin: 0 auto 1.5rem;
+    display: block;
     transition: transform 0.3s ease;
+}
+
+.prep-card-image-top {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.prep-card-image-top .prep-card-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 24px 24px 0 0;
+    transition: transform 0.4s ease;
+}
+
+.prep-card-image-top:hover .prep-card-image {
+    transform: scale(1.05);
+}
+
+.prep-card-content {
+    padding: 1.5rem 2rem 2rem;
+    border-top: 1px solid var(--border);
+    text-align: center;
+}
+
+.prep-card-image-top h3 {
+    margin-bottom: 0.5rem;
+}
+
+.prep-card-image-top p {
+    margin-bottom: 1rem;
 }
 
 .prep-card:hover .prep-card-icon {
@@ -284,6 +324,7 @@ body {
     font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
+    text-align: center;
 }
 
 .prep-card p {
@@ -408,42 +449,155 @@ body {
 }
 
 @media (max-width: 768px) {
+    .nav {
+        padding: 0.5rem 0;
+    }
+
     .nav-inner {
-        padding: 1rem;
+        padding: 0.5rem 1rem;
+        border-radius: 50px;
     }
-    
+
+    .logo-icon {
+        width: 32px;
+        height: 32px;
+    }
+
+    .logo-text {
+        font-size: 1.1rem;
+    }
+
     .nav-links {
-        gap: 1rem;
+        gap: 0.5rem;
     }
-    
+
     .nav-link {
-        font-size: 0.85rem;
+        font-size: 0.8rem;
+        display: none;
     }
-    
+
+    .theme-toggle {
+        width: 38px;
+        height: 38px;
+        font-size: 1rem;
+    }
+
     #board {
-        padding: 0 1rem;
+        padding: 0 0.75rem;
     }
-    
+
     .hero {
-        padding: 6rem 0 2rem;
+        padding: 4rem 0 1.5rem;
     }
-    
+
+    .hero-title {
+        font-size: clamp(1.8rem, 8vw, 2.5rem);
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+
     .hero-egg {
-        width: 150px;
-        height: 150px;
+        width: 120px;
+        height: 120px;
+        margin-bottom: 1rem;
     }
-    
+
+    .prep-title {
+        font-size: clamp(1.3rem, 5vw, 1.5rem);
+        margin: 1.5rem 0;
+    }
+
     .prep-cards {
         grid-template-columns: 1fr;
         gap: 1rem;
+        padding: 2rem 0 2rem;
     }
-    
+
     .prep-card {
-        padding: 1.5rem;
+        padding: 1.25rem;
     }
-    
+
+    .prep-card-image-top {
+        padding: 0;
+    }
+
     .prep-card-icon {
         width: 60px;
         height: 60px;
+        margin-bottom: 1rem;
+    }
+
+    .prep-card h3 {
+        font-size: 1.25rem;
+    }
+
+    .prep-card p {
+        font-size: 0.9rem;
+    }
+
+    .prep-cards-center {
+        padding-bottom: 2rem;
+    }
+
+    .prep-card-image-top .prep-card-image {
+        height: 150px;
+        border-radius: 16px 16px 0 0;
+    }
+
+    .prep-card-image-top {
+        border-radius: 16px;
+    }
+
+    .prep-card-content {
+        padding: 1rem 1.25rem 1.25rem;
+        border-top: 1px solid var(--border);
+        border-radius: 0 0 16px 16px;
+    }
+
+    .prep-card-image-top h3 {
+        font-size: 1.25rem;
+    }
+
+    .prep-card-image-top p {
+        font-size: 0.9rem;
+    }
+
+    .footer {
+        padding: 2rem 1rem;
+    }
+
+    .footer-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .footer-text {
+        font-size: 0.85rem;
+    }
+
+    .footer-brand {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-inner {
+        border-radius: 30px;
+    }
+
+    .logo-text {
+        font-size: 1rem;
+    }
+
+    .hero-egg {
+        width: 100px;
+        height: 100px;
+    }
+
+    .prep-card-image-top .prep-card-image {
+        height: 120px;
     }
 }

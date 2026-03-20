@@ -19,7 +19,7 @@
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry, index) => {
             if (entry.isIntersecting) {
-                setTimeout(() => entry.target.classList.add('reveal'), index * 100);
+                setTimeout(() => entry.target.classList.add('reveal'), 200 + index * 100);
                 observer.unobserve(entry.target);
             }
         });
