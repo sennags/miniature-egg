@@ -1,4 +1,4 @@
-<h1>Miniature Egg</h1>
+<h1>🍳 Miniature Egg</h1>
 
 <p>Afinal, qual <a href="https://www.instagram.com/p/BsOGulcndj-/" target="_blank"><i>Ovo</i></a> devo seguir?</p>
 
@@ -8,16 +8,24 @@
   3- Apresentando jeitos para se fazer <i>Ovos</i>, com pretensão de expandir para mais receitas no futuro.
 </p>
 
-## Funcionalidades
+---
 
-- Guias visuais para preparo de ovos
-- Temporizador com presets personalizáveis
-- Tema claro e escuro
-- Design responsivo e moderno
-- Animações suaves
+## 💡 Funcionalidades
 
-## Stack
+| Feature | Descrição |
+|---------|-----------|
+| 🍳 Guias visuais | Receitas ilustradas para preparo de ovos |
+| ⏱️ Temporizador | Countdown com presets personalizáveis |
+| 🌓 Tema claro/escuro | Toggle com persistência e anti-flash |
+| 📱 Design responsivo | Funciona em qualquer dispositivo |
+| ✨ Animações suaves | Experiência visual moderna |
+
+---
+
+## 🚀 Stack
 
 <code>&lt;HTML&gt;</code> • <code>{CSS}</code> • <code>JS</code> • Google Fonts
+
+---
 
 Feito com 🧡 e ovos.
