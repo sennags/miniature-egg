@@ -6,56 +6,94 @@
     <title>Ovo Frito - Miniature Egg</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/recipe.css">
+    <script src="../js/script.js" defer></script>
+    <script src="../js/timer.js" defer></script>
 </head>
 <body>
-    <div class="topbar-trigger"></div>
-    <nav class="topbar" id="topbar">
-        <a href="home.html" class="nav-back">←</a>
-        <a href="#" class="nav-cta">Sobre</a>
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="home.html" class="logo">
+                <img src="../Icons/ovo-frito.svg" alt="Miniature Egg" class="logo-icon">
+                <span class="logo-text">Miniature Egg</span>
+            </a>
+            <div class="nav-links">
+                <a href="home.html" class="nav-link">← Voltar</a>
+                <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">
+                    <span class="theme-icon">◐</span>
+                </button>
+            </div>
+        </div>
     </nav>
 
     <main id="board">
-        <img src="../Icons/ovo-frito.svg" alt="Ovo Frito" class="main-icon">
-        <h1>Ovo Frito</h1>
-        
+        <header class="recipe-header">
+            <img src="../Icons/ovo-frito.svg" alt="Ovo Frito" class="recipe-icon">
+            <h1 class="recipe-title"><span>Ovo</span> Frito</h1>
+            <p class="recipe-intro">O clássico que nunca sai de moda. Crocante na borda, mole no meio.</p>
+        </header>
+
         <div class="recipe-content">
-            <section class="recipe-section">
-                <h2>Ingredientes</h2>
-                <ul>
-                    <li>1 ovo</li>
-                    <li>1 colher de sopa de óleo ou manteiga</li>
+            <div class="recipe-card">
+                <h2 class="recipe-section-title">Ingredientes</h2>
+                <ul class="ingredients-list">
+                    <li>1 ovo fresco</li>
+                    <li>1 colher de sopa de manteiga ou óleo</li>
                     <li>Sal a gosto</li>
+                    <li>Pimenta do reino (opcional)</li>
                 </ul>
-            </section>
+            </div>
 
-            <section class="recipe-section">
-                <h2>Modo de Preparo</h2>
-                <ol>
-                    <li>Aquecer a frigideira em fogo médio</li>
-                    <li>Adicionar o óleo ou manteiga</li>
-                    <li>Quebrar o ovo na frigideira</li>
-                    <li>Temperar com sal</li>
-                    <li>Esperar 2-3 minutos até a clara firmar</li>
-                    <li>Servir imediatamente</li>
+            <div class="recipe-card">
+                <h2 class="recipe-section-title">Modo de Preparo</h2>
+                <ol class="steps-list">
+                    <li>
+                        <span class="step-number">1</span>
+                        <span>Aqueça a frigideira em fogo médio-alto por 1-2 minutos</span>
+                    </li>
+                    <li>
+                        <span class="step-number">2</span>
+                        <span>Adicione a manteiga e espere derreter até formar espuma</span>
+                    </li>
+                    <li>
+                        <span class="step-number">3</span>
+                        <span>Quebre o ovo com cuidado, evitando romper a gema</span>
+                    </li>
+                    <li>
+                        <span class="step-number">4</span>
+                        <span>Tempere com sal e pimenta</span>
+                    </li>
+                    <li>
+                        <span class="step-number">5</span>
+                        <span>Cozinhe por 2-3 minutos até a clara firmar</span>
+                    </li>
+                    <li>
+                        <span class="step-number">6</span>
+                        <span>Sirva imediatamente para melhor textura</span>
+                    </li>
                 </ol>
-            </section>
+            </div>
 
-            <section class="recipe-section timer-section">
-                <h2>Tempo de Preparo</h2>
-                <div class="timer-display" id="timer">3:00</div>
-                <button class="timer-btn" id="timerBtn">Iniciar</button>
-            </section>
+            <div class="timer-section">
+                <h2 class="timer-title">⏱️ Temporizador</h2>
+                <div class="timer-presets">
+                    <button class="preset-btn active" data-time="3">Padrão (3min)</button>
+                </div>
+                <div class="timer-display" id="timer" data-default="3:00">3:00</div>
+                <div class="timer-controls">
+                    <button class="timer-btn" id="timerBtn">
+                        <span class="btn-icon">▶</span>
+                        Iniciar
+                    </button>
+                </div>
+            </div>
         </div>
     </main>
 
-    <footer class="egg-footer" id="footer">
-        <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">
-            <span class="theme-icon">◐</span>
-        </button>
-        <span class="footer-text">Miniature Egg</span>
+    <footer class="footer">
+        <div class="footer-content">
+            <img src="../Icons/ovo-frito.svg" alt="Ovo" class="footer-icon">
+            <p class="footer-text">Miniature Egg - Guias para ovos perfeitos.</p>
+        </div>
     </footer>
-
-    <script src="../js/script.js"></script>
-    <script src="../js/timer.js"></script>
 </body>
 </html>

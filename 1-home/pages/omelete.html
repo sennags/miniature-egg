@@ -6,58 +6,95 @@
     <title>Omelete - Miniature Egg</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/recipe.css">
+    <script src="../js/script.js" defer></script>
+    <script src="../js/timer.js" defer></script>
 </head>
 <body>
-    <div class="topbar-trigger"></div>
-    <nav class="topbar" id="topbar">
-        <a href="home.html" class="nav-back">←</a>
-        <a href="#" class="nav-cta">Sobre</a>
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="home.html" class="logo">
+                <img src="../Icons/omelete.svg" alt="Miniature Egg" class="logo-icon">
+                <span class="logo-text">Miniature Egg</span>
+            </a>
+            <div class="nav-links">
+                <a href="home.html" class="nav-link">← Voltar</a>
+                <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">
+                    <span class="theme-icon">◐</span>
+                </button>
+            </div>
+        </div>
     </nav>
 
     <main id="board">
-        <img src="../Icons/omelete.svg" alt="Omelete" class="main-icon">
-        <h1>Omelete</h1>
-        
+        <header class="recipe-header">
+            <img src="../Icons/omelete.svg" alt="Omelete" class="recipe-icon">
+            <h1 class="recipe-title"><span>Ome</span>lete</h1>
+            <p class="recipe-intro">Fofinha e versátil. Perfeita para qualquer refeição do dia.</p>
+        </header>
+
         <div class="recipe-content">
-            <section class="recipe-section">
-                <h2>Ingredientes</h2>
-                <ul>
-                    <li>2 ovos</li>
+            <div class="recipe-card">
+                <h2 class="recipe-section-title">Ingredientes</h2>
+                <ul class="ingredients-list">
+                    <li>2 ovos frescos</li>
                     <li>1 colher de sopa de leite (opcional)</li>
                     <li>1 colher de sopa de manteiga</li>
                     <li>Sal e pimenta a gosto</li>
-                    <li>Recheio a gosto (queijo, presunto, etc)</li>
+                    <li>Recheio: queijo, presunto, tomate, etc</li>
                 </ul>
-            </section>
+            </div>
 
-            <section class="recipe-section">
-                <h2>Modo de Preparo</h2>
-                <ol>
-                    <li>Bater os ovos com o leite, sal e pimenta</li>
-                    <li>Aquecer a manteiga na frigideira</li>
-                    <li>Despejar os ovos batidos</li>
-                    <li>Mexer suavemente até começar a firmar</li>
-                    <li>Adicionar o recheio de um lado</li>
-                    <li>Dobrar ao meio e servir</li>
+            <div class="recipe-card">
+                <h2 class="recipe-section-title">Modo de Preparo</h2>
+                <ol class="steps-list">
+                    <li>
+                        <span class="step-number">1</span>
+                        <span>Bata os ovos com leite, sal e pimenta em uma tigela</span>
+                    </li>
+                    <li>
+                        <span class="step-number">2</span>
+                        <span>Aqueça a manteiga na frigideira em fogo médio</span>
+                    </li>
+                    <li>
+                        <span class="step-number">3</span>
+                        <span>Despeje os ovos batidos e espalhe bem</span>
+                    </li>
+                    <li>
+                        <span class="step-number">4</span>
+                        <span>Mexa suavemente com uma espátula até firmar</span>
+                    </li>
+                    <li>
+                        <span class="step-number">5</span>
+                        <span>Adicione o recheio de um lado da omelete</span>
+                    </li>
+                    <li>
+                        <span class="step-number">6</span>
+                        <span>Dobre ao meio e sirva imediatamente</span>
+                    </li>
                 </ol>
-            </section>
+            </div>
 
-            <section class="recipe-section timer-section">
-                <h2>Tempo de Preparo</h2>
-                <div class="timer-display" id="timer">5:00</div>
-                <button class="timer-btn" id="timerBtn">Iniciar</button>
-            </section>
+            <div class="timer-section">
+                <h2 class="timer-title">⏱️ Temporizador</h2>
+                <div class="timer-presets">
+                    <button class="preset-btn active" data-time="5">Padrão (5min)</button>
+                </div>
+                <div class="timer-display" id="timer" data-default="5:00">5:00</div>
+                <div class="timer-controls">
+                    <button class="timer-btn" id="timerBtn">
+                        <span class="btn-icon">▶</span>
+                        Iniciar
+                    </button>
+                </div>
+            </div>
         </div>
     </main>
 
-    <footer class="egg-footer" id="footer">
-        <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">
-            <span class="theme-icon">◐</span>
-        </button>
-        <span class="footer-text">Miniature Egg</span>
+    <footer class="footer">
+        <div class="footer-content">
+            <img src="../Icons/omelete.svg" alt="Ovo" class="footer-icon">
+            <p class="footer-text">Miniature Egg - Guias para ovos perfeitos.</p>
+        </div>
     </footer>
-
-    <script src="../js/script.js"></script>
-    <script src="../js/timer.js"></script>
 </body>
 </html>

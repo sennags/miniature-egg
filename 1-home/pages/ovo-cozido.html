@@ -6,60 +6,95 @@
     <title>Ovo Cozido - Miniature Egg</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/recipe.css">
+    <script src="../js/script.js" defer></script>
+    <script src="../js/timer.js" defer></script>
 </head>
 <body>
-    <div class="topbar-trigger"></div>
-    <nav class="topbar" id="topbar">
-        <a href="home.html" class="nav-back">←</a>
-        <a href="#" class="nav-cta">Sobre</a>
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="home.html" class="logo">
+                <img src="../Icons/ovo-cozido.svg" alt="Miniature Egg" class="logo-icon">
+                <span class="logo-text">Miniature Egg</span>
+            </a>
+            <div class="nav-links">
+                <a href="home.html" class="nav-link">← Voltar</a>
+                <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">
+                    <span class="theme-icon">◐</span>
+                </button>
+            </div>
+        </div>
     </nav>
 
     <main id="board">
-        <img src="../Icons/ovo-cozido.svg" alt="Ovo Cozido" class="main-icon">
-        <h1>Ovo Cozido</h1>
-        
+        <header class="recipe-header">
+            <img src="../Icons/ovo-cozido.svg" alt="Ovo Cozido" class="recipe-icon">
+            <h1 class="recipe-title"><span>Ovo</span> Cozido</h1>
+            <p class="recipe-intro">Mole ou cozido? Descubra o ponto perfeito para você.</p>
+        </header>
+
         <div class="recipe-content">
-            <section class="recipe-section">
-                <h2>Ingredientes</h2>
-                <ul>
-                    <li>1 ovo</li>
+            <div class="recipe-card">
+                <h2 class="recipe-section-title">Ingredientes</h2>
+                <ul class="ingredients-list">
+                    <li>1 ovo fresco</li>
                     <li>Água suficiente para cobrir o ovo</li>
                     <li>Sal a gosto</li>
+                    <li>Gelo (opcional, para banho maria gelado)</li>
                 </ul>
-            </section>
+            </div>
 
-            <section class="recipe-section">
-                <h2>Modo de Preparo</h2>
-                <ol>
-                    <li>Colocar água numa panela e levar ao fogo</li>
-                    <li>Quando ferver, adicionar o ovo com cuidado</li>
-                    <li>Para mole: cozinhar por 6-7 minutos</li>
-                    <li>Para cozido: cozinhar por 10-12 minutos</li>
-                    <li>Transferir para água gelada para parar o cozimento</li>
-                    <li>Descascar e servir</li>
+            <div class="recipe-card">
+                <h2 class="recipe-section-title">Modo de Preparo</h2>
+                <ol class="steps-list">
+                    <li>
+                        <span class="step-number">1</span>
+                        <span>Coloque água em uma panela funda e leve ao fogo alto</span>
+                    </li>
+                    <li>
+                        <span class="step-number">2</span>
+                        <span>Quando a água ferver, reduza para fogo médio</span>
+                    </li>
+                    <li>
+                        <span class="step-number">3</span>
+                        <span>Com cuidado, mergulhe o ovo na água fervente</span>
+                    </li>
+                    <li>
+                        <span class="step-number">4</span>
+                        <span>Cozinhe: 6-7 min para mole, 10-12 min para cozido</span>
+                    </li>
+                    <li>
+                        <span class="step-number">5</span>
+                        <span>Transfira para água gelada para parar o cozimento</span>
+                    </li>
+                    <li>
+                        <span class="step-number">6</span>
+                        <span>Descasque e sirva</span>
+                    </li>
                 </ol>
-            </section>
+            </div>
 
-            <section class="recipe-section timer-section">
-                <h2>Tempo de Preparo</h2>
+            <div class="timer-section">
+                <h2 class="timer-title">⏱️ Temporizador</h2>
                 <div class="timer-presets">
-                    <button class="preset-btn" data-time="6">Mole (6min)</button>
+                    <button class="preset-btn active" data-time="6">Mole (6min)</button>
                     <button class="preset-btn" data-time="10">Cozido (10min)</button>
                 </div>
-                <div class="timer-display" id="timer">6:00</div>
-                <button class="timer-btn" id="timerBtn">Iniciar</button>
-            </section>
+                <div class="timer-display" id="timer" data-default="6:00">6:00</div>
+                <div class="timer-controls">
+                    <button class="timer-btn" id="timerBtn">
+                        <span class="btn-icon">▶</span>
+                        Iniciar
+                    </button>
+                </div>
+            </div>
         </div>
     </main>
 
-    <footer class="egg-footer" id="footer">
-        <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">
-            <span class="theme-icon">◐</span>
-        </button>
-        <span class="footer-text">Miniature Egg</span>
+    <footer class="footer">
+        <div class="footer-content">
+            <img src="../Icons/ovo-cozido.svg" alt="Ovo" class="footer-icon">
+            <p class="footer-text">Miniature Egg - Guias para ovos perfeitos.</p>
+        </div>
     </footer>
-
-    <script src="../js/script.js"></script>
-    <script src="../js/timer.js"></script>
 </body>
 </html>
