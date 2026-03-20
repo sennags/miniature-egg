@@ -139,10 +139,6 @@
     text-align: center;
 }
 
-[data-theme="dark"] .timer-section {
-    background: linear-gradient(135deg, var(--card-bg) 0%, var(--secondary) 100%);
-}
-
 .timer-title {
     font-family: 'Playfair Display', serif;
     font-size: 1.5rem;

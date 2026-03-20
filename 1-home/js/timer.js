@@ -1,116 +1,80 @@
 (function() {
     const timerDisplay = document.getElementById('timer');
     const timerBtn = document.getElementById('timerBtn');
-    
     if (!timerDisplay || !timerBtn) return;
-    
+
     let timerInterval = null;
     let totalSeconds = 0;
     let isRunning = false;
-    
-    function formatTime(seconds) {
-        const mins = Math.floor(seconds / 60);
-        const secs = seconds % 60;
-        return `${mins}:${secs.toString().padStart(2, '0')}`;
-    }
-    
-    function updateDisplay() {
-        timerDisplay.textContent = formatTime(totalSeconds);
-    }
-    
-    function setButtonState(state) {
-        const btnIcon = timerBtn.querySelector('.btn-icon');
-        switch(state) {
-            case 'start':
-                timerBtn.innerHTML = '<span class="btn-icon">▶</span> Iniciar';
-                timerBtn.classList.remove('paused');
-                break;
-            case 'pause':
-                btnIcon.textContent = '⏸';
-                timerBtn.innerHTML = '<span class="btn-icon">⏸</span> Pausar';
-                timerBtn.classList.add('paused');
-                break;
-            case 'resume':
-                btnIcon.textContent = '▶';
-                timerBtn.innerHTML = '<span class="btn-icon">▶</span> Continuar';
-                timerBtn.classList.remove('paused');
-                break;
-            case 'complete':
-                btnIcon.textContent = '↻';
-                timerBtn.innerHTML = '<span class="btn-icon">↻</span> Reiniciar';
-                timerBtn.classList.add('paused');
-                timerDisplay.parentElement.classList.add('timer-complete');
-                break;
-        }
-    }
-    
-    function startTimer() {
+    const btnIcon = timerBtn.querySelector('.btn-icon');
+
+    const updateDisplay = () => {
+        const mins = Math.floor(totalSeconds / 60);
+        const secs = totalSeconds % 60;
+        timerDisplay.textContent = `${mins}:${secs.toString().padStart(2, '0')}`;
+    };
+
+    const setBtnState = (icon, text) => {
+        btnIcon.textContent = icon;
+        timerBtn.lastChild.textContent = ` ${text}`;
+    };
+
+    const startTimer = () => {
         if (totalSeconds <= 0) return;
-        
         isRunning = true;
-        setButtonState('pause');
-        timerDisplay.parentElement.classList.add('timer-running');
-        timerDisplay.parentElement.classList.remove('timer-complete');
-        
+        setBtnState('⏸', 'Pausar');
+        timerBtn.classList.add('paused');
+        timerDisplay.parentElement.classList.add('timer-running', 'timer-complete');
+
         timerInterval = setInterval(() => {
             totalSeconds--;
             updateDisplay();
-            
             if (totalSeconds <= 0) {
                 clearInterval(timerInterval);
                 timerInterval = null;
                 isRunning = false;
-                setButtonState('complete');
+                setBtnState('↻', 'Reiniciar');
                 timerDisplay.parentElement.classList.remove('timer-running');
             }
         }, 1000);
-    }
-    
-    function pauseTimer() {
+    };
+
+    const pauseTimer = () => {
         isRunning = false;
         clearInterval(timerInterval);
         timerInterval = null;
-        setButtonState('resume');
+        setBtnState('▶', 'Continuar');
+        timerBtn.classList.remove('paused');
         timerDisplay.parentElement.classList.remove('timer-running');
-    }
-    
+    };
+
     timerBtn.addEventListener('click', () => {
-        if (isRunning) {
-            pauseTimer();
-        } else if (totalSeconds <= 0) {
-            const initialTime = timerDisplay.dataset.default || '3:00';
-            const [mins, secs] = initialTime.split(':');
-            totalSeconds = parseInt(mins) * 60 + parseInt(secs);
+        if (isRunning) pauseTimer();
+        else {
+            if (totalSeconds <= 0) {
+                const [mins, secs] = (timerDisplay.dataset.default || '3:00').split(':');
+                totalSeconds = parseInt(mins) * 60 + parseInt(secs);
+            }
             updateDisplay();
-            startTimer();
-        } else {
             startTimer();
         }
     });
-    
+
     document.querySelectorAll('.preset-btn').forEach(btn => {
         btn.addEventListener('click', () => {
             document.querySelectorAll('.preset-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
-            
-            const minutes = parseInt(btn.dataset.time);
-            totalSeconds = minutes * 60;
+            totalSeconds = parseInt(btn.dataset.time) * 60;
             updateDisplay();
-            
-            if (timerInterval) {
-                clearInterval(timerInterval);
-                timerInterval = null;
-                isRunning = false;
-                setButtonState('start');
-            }
-            
+            clearInterval(timerInterval);
+            timerInterval = null;
+            isRunning = false;
+            setBtnState('▶', 'Iniciar');
+            timerBtn.classList.remove('paused');
             timerDisplay.parentElement.classList.remove('timer-complete');
         });
     });
-    
-    const initialTime = timerDisplay?.dataset?.default || timerDisplay?.textContent;
-    if (initialTime) {
-        const timeParts = initialTime.split(':');
-        totalSeconds = parseInt(timeParts[0]) * 60 + parseInt(timeParts[1]);
-    }
+
+    const [mins, secs] = (timerDisplay?.dataset?.default || timerDisplay?.textContent).split(':');
+    totalSeconds = parseInt(mins) * 60 + parseInt(secs);
 })();

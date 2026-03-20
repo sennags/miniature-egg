@@ -351,10 +351,6 @@ body {
     margin-top: 2rem;
 }
 
-[data-theme="dark"] .footer {
-    background: var(--secondary);
-}
-
 .footer-content {
     max-width: 600px;
     margin: 0 auto;
