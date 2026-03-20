@@ -1,32 +1,23 @@
-<h1>miniature-egg</h1>
-<h3>Afinal, qual <a href="https://www.instagram.com/p/BsOGulcndj-/" target="_blank"><i>Ovo</i></a> devo seguir?</h3>
-<div>
-  <p style="line-height: 1.6">
-    1- Projeto pessoal e simples, apenas com o intuito de estudo diário de linguagens, implementações e integrações.
-    <br>2- Pensado em resolver problemas em questão de tempo e comida.
-    <br>3- Apresentando jeitos para se fazer <i>Ovos</i>, com pretenção de poder fazer mais no futuro.
-  </p>
-</div>
+<h1>Miniature Egg</h1>
+
+<p>Afinal, qual <a href="https://www.instagram.com/p/BsOGulcndj-/" target="_blank"><i>Ovo</i></a> devo seguir?</p>
+
+<p>
+  1- Projeto pessoal e simples, com o intuito de estudo diário de linguagens, implementações e integrações.<br>
+  2- Pensado em resolver problemas em questão de tempo e comida.<br>
+  3- Apresentando jeitos para se fazer <i>Ovos</i>, com pretensão de expandir para mais receitas no futuro.
+</p>
 
 ## Funcionalidades
 
-- **Sistema de navegação por cards** - Selecione o modo de preparo desejado
-- **Páginas individuais** - Cada modo de preparo com ingredientes e instruções
-- **Temporizador** - Cronômetro para controle do tempo de preparo
-- **Modo claro/escuro** - Toggle de tema com persistência via localStorage
+- Guias visuais para preparo de ovos
+- Temporizador com presets personalizáveis
+- Tema claro e escuro
+- Design responsivo e moderno
+- Animações suaves
 
-## Estrutura
+## Stack
 
-```
-1-home/
-├── home.html          # Página inicial com cards de navegação
-├── style.css          # Estilos globais e temas
-├── script.js          # Lógica da navbar e toggle de tema
-├── timer.js           # Sistema de temporizador
-├── recipe.css         # Estilos das páginas de receita
-└── pages/
-    ├── ovo-frito.html
-    ├── ovo-cozido.html
-    ├── omelete.html
-    └── ovo-mexido.html
-```
+<code>&lt;HTML&gt;</code> • <code>{CSS}</code> • <code>JS</code> • Google Fonts
+
+Feito com 🧡 e ovos.

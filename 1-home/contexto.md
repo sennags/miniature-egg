@@ -1,80 +1,129 @@
-## Miniature Egg
+# Miniature Egg
 
 ## Visão Geral
 
-Projeto web estático de receitas de ovos, funcionando como um guia rápido e interativo para preparo. Arquitetura simples mas bem executada de SPA-like multi-page.
+Guia interativo para preparo de ovos, redesenhado com estética moderna e sofisticada. Site estático multi-page com foco em experiência visual, animações suaves e usabilidade intuitiva.
 
 ## Arquitetura
 
 ```
 1-home/
-├── pages/          # 4 páginas de receitas + home
-├── css/            # style.css (global) + recipe.css (receitas)
-├── js/             # script.js (UI) + timer.js (lógica do timer)
-└── Icons/          # SVGs ilustrativos
+├── pages/          # 5 páginas (home + 4 receitas)
+├── css/
+│   ├── style.css    # Estilos globais, tema, componentes
+│   └── recipe.css   # Layout específico de receitas
+├── js/
+│   ├── script.js    # Theme toggle (IIFE pattern)
+│   └── timer.js     # Sistema de temporizador
+├── Icons/           # SVGs ilustrativos
+└── contexto.md      # Este arquivo
 ```
-
-**Ponto positivo**: Separação clara de responsabilidades - CSS/JS modulares, páginas HTML consistentes.
 
 ## Stack
 
-- HTML5 semântico (lang="pt-BR", meta tags completas)
-- CSS3 com Custom Properties para theming
-- JavaScript Vanilla ES6+ (sem dependências)
+- HTML5 semântico com scripts inline anti-flash
+- CSS3 com Custom Properties (design system completo)
+- JavaScript Vanilla ES6+ em IIFE pattern
+- Google Fonts: DM Sans + Playfair Display
 
-## Funcionalidades Implementadas
+## Design System
 
-### 1. Navegação por Cards
-Grid 2x2 responsivo com hover states e feedback visual (translateY + box-shadow). Experiência tátil satisfatória.
+### Paleta de Cores
 
-### 2. Sistema de Temporizador
-- Countdown com pausa/continua
-- Presets para diferentes pontos de cozimento (ex: mole/cozido)
-- Feedback visual ao completar (cor muda)
-- Inicialização parseando o tempo do DOM (prático mas frágil)
+| Token | Light Mode | Dark Mode |
+|-------|------------|----------|
+| Primary | `#F4A024` | `#F4A024` |
+| Background | `#FFFBF5` | `#1A1816` |
+| Card | `#FFFFFF` | `#2D2A26` |
+| Text | `#2D2A26` | `#FFF8F0` |
+| Border | `#F0E6DB` | `#3D3A36` |
 
-### 3. Theme Toggle
+### Tipografia
+- **Display**: Playfair Display (títulos, hero)
+- **Body**: DM Sans (interface, corpo de texto)
+
+### Espaciamento
+- Container máximo: 1200px
+- Padding lateral: 2rem (mobile: 1rem)
+- Border radius: 24px (cards), 100px (botões pill)
+
+## Funcionalidades
+
+### 1. Theme Toggle
 - Light/Dark via CSS Custom Properties
 - Persistência em localStorage
-- Ícone dinâmico (◐/◑)
+- Script inline anti-flash no `<head>`
+- Ícones: ☀ (sol com rotação no hover) / ☾ (lua sem animação)
 
-### 4. Navbar Oculta
-- Aparece no hover via transform
-- Auto-hide com debounce de 300ms
-- Pattern interessante para UI minimalista
+### 2. Navegação
+- Navbar fixa com glassmorphism (`backdrop-filter: blur(20px)`)
+- Links com underline animado no hover
+- Botão de voltar nas páginas de receita
+
+### 3. Cards de Receitas
+- Grid responsivo auto-fit (min 280px)
+- Hover: translateY(-8px) + shadow + gradiente top bar
+- Ícone com scale + rotate no hover
+- Meta info com seta animada
+
+### 4. Sistema de Temporizador
+- Estados visuais: Iniciar → Pausar → Continuar → Reiniciar
+- Presets para diferentes pontos de cozimento
+- Animações: pulse durante execução, celebrate ao completar
+- Dados via `data-default` (melhor que parsing de DOM)
+
+### 5. Animações
+- Hero: fadeInUp/Down staggered
+- Egg flutuante (float 3s infinite)
+- Scroll reveal implícito via CSS
+
+## Páginas
+
+| Página | Descrição | Timer |
+|--------|-----------|-------|
+| home.html | Landing com cards de navegação | - |
+| ovo-frito.html | Ovo frito clássico | 3min |
+| ovo-cozido.html | Mole (6min) / Cozido (10min) | Presets |
+| omelete.html | Omelete básica | 5min |
+| ovo-mexido.html | Ovo mexido cremoso | 3min |
 
 ## Qualidade do Código
 
 ### Pontos Fortes
-- CSS bem organizado com variáveis
-- Responsivo (breakpoint em 768px)
-- Acessibilidade básica (aria-label, alt texts)
-- Feedback visual em todas interações
+- Arquitetura CSS com variáveis bem organizadas
+- Responsivo com clamp() e media queries
+- IIFE pattern em JavaScript (escopo isolado)
+- Acessibilidade: aria-label, alt texts, focus states
+- Performance: fonts com display=swap, SVGs inline
+- Anti-flash theme com script inline
 
 ### Oportunidades de Melhoria
 
-**1. JavaScript:**
-- Timer inicializa parseando o DOM (`initialTime?.textContent`) - frágil e anti-pattern
-- Sem validação robusta
-- `dataset.time` assume formato sempre válido
+**CSS:**
+- Sem CSS variables para valores repetidos (gap, padding inline)
+- Ausência de scroll-snap para carousel
+- Transições könnten komplexer sein (staggered delays)
 
-**2. CSS:**
-- Valores mágicos (box-shadow hardcoded)
-- Alguma redundância em media queries
-- Scrollbar styling específico de webkit (funciona, mas não cross-browser)
+**JavaScript:**
+- Sem validação de input no timer
+- Não há sound notification ao completar timer
+- podríabeneficiarse de requestAnimationFrame para animações
 
-**3. Arquitetura:**
-- Repetição de markup em todas páginas (nav, footer)
-- Sem build step - could benefit from partials/template engine para manutenção
+**Arquitetura:**
+- Repetição de nav/footer em todas páginas
+- Sem build step (Vite/Webpack)
+- Sem linting (ESLint, Stylelint)
+- Testes e2e könnten hilfreich sein
 
-## Sugestões de Evolução
+## Roadmap Sugerido
 
-1. **Extração de componentes** - Navbar/footer como web components ou template strings
-2. **Estado global** - Sistema de tema poderia usar contexto mais robusto
-3. **PWA** - Adicionar service worker para offline, manifest.json
-4. **Testes** - Cobertura mínima de unit tests para timer.js
-5. **Perfis de cozimento customizáveis** pelo usuário
+1. **PWA** - Service worker + manifest para offline
+2. **Sound** - Notificação sonora ao completar timer
+3. **SSR/SSG** - Astro ou 11ty para zero JS inicial
+4. **Testes** - Playwright para e2e, Vitest para timer logic
+5. **Accessibility** - WCAG 2.1 AA audit
+6. **i18n** - Suporte a múltiplos idiomas
 
 ## Conclusão
 
-Projeto limpo e funcional para seu propósito. A curva de aprendizado de front-end está evidente - usa padrões modernos de forma consistente. Bom candidato para primeiro portfólio ou projeto de estudo. A arquitetura simples facilita manutenção e extensibilidade.
+Projeto bem executado com design system consistente e animações polidas. O redesign moderno elevou significativamente a qualidade visual. Pronto para uso em produção com pequenas melhorias de acessibilidade e performance.
