@@ -23,4 +23,19 @@
             themeIcon.textContent = theme === 'light' ? '☀' : '☾';
         }
     }
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.classList.add('reveal');
+                }, index * 100);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { rootMargin: '50% 0px 0px 0px' });
+
+    document.querySelectorAll('.prep-card').forEach(card => {
+        observer.observe(card);
+    });
 })();
