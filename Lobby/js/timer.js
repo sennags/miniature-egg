@@ -31,7 +31,6 @@
             updateDisplay();
             if (totalSeconds <= 0) {
                 clearInterval(timerInterval);
-                timerInterval = null;
                 isRunning = false;
                 setBtnState('↻', 'Reiniciar');
                 timerDisplay.parentElement.classList.remove('timer-running');

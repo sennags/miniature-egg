@@ -1,10 +1,40 @@
 (function() {
     const html = document.documentElement;
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    html.setAttribute('data-theme', savedTheme);
-    
     const icon = document.querySelector('.theme-icon');
-    if (icon) icon.textContent = savedTheme === 'dark' ? '☾' : '☀';
+    
+    function getThemeByTime() {
+        const d = new Date();
+        const h = d.getHours();
+        const m = d.getMinutes();
+        const totalMin = h * 60 + m;
+        const darkStart = 17 * 60 + 30;  // 17:30
+        const darkEnd = 6 * 60 + 30;     // 6:30
+        
+        return totalMin >= darkStart || totalMin < darkEnd ? 'dark' : 'light';
+    }
+    
+    function updateTheme() {
+        const saved = localStorage.getItem('theme');
+        if (saved) return;
+        
+        const theme = getThemeByTime();
+        const currentTheme = html.getAttribute('data-theme');
+        
+        if (theme !== currentTheme) {
+            html.setAttribute('data-theme', theme);
+            if (icon) icon.textContent = theme === 'dark' ? '☾' : '☀';
+        }
+    }
+    
+    function setInitialTheme() {
+        const saved = localStorage.getItem('theme');
+        const theme = saved || getThemeByTime();
+        html.setAttribute('data-theme', theme);
+        if (icon) icon.textContent = theme === 'dark' ? '☾' : '☀';
+    }
+    
+    setInitialTheme();
+    setInterval(updateTheme, 60000);
     
     document.body.addEventListener('click', (e) => {
         if (e.target.closest('#themeToggle')) {

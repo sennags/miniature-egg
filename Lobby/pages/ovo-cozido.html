@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ovo Cozido - Miniature Egg</title>
-    <script>const t=localStorage.getItem('theme');if(t==='dark'){document.documentElement.setAttribute('data-theme','dark');document.querySelector('.theme-icon').textContent='☾';}</script>
+    <script>(function(){const d=new Date();const h=d.getHours();const m=d.getMinutes();const t=localStorage.getItem('theme')||((h>17||(h===17&&m>=30))||h<6||(h===6&&m<30)?'dark':'light');document.documentElement.setAttribute('data-theme',t);const i=document.querySelector('.theme-icon');if(i)i.textContent=t==='dark'?'☾':'☀';})();</script>
     <link rel="icon" href="../favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/recipe.css">
