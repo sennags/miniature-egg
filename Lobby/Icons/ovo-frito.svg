@@ -1,8 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
   <defs>
-    <linearGradient id="whiteGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#FFFBF5"/>
-      <stop offset="100%" style="stop-color:#F5EDE3"/>
+    <linearGradient id="eggGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFF8F0"/>
+      <stop offset="40%" style="stop-color:#F5EDE3"/>
+      <stop offset="100%" style="stop-color:#E8DDD0"/>
     </linearGradient>
     <linearGradient id="yolkGrad" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0%" style="stop-color:#FFB940"/>
@@ -12,7 +13,8 @@
       <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#2D2A26" flood-opacity="0.15"/>
     </filter>
   </defs>
-  <ellipse cx="60" cy="65" rx="42" ry="45" fill="url(#whiteGrad)" stroke="#F0E6DB" stroke-width="1.5" filter="url(#shadow)"/>
-  <ellipse cx="60" cy="58" rx="18" ry="16" fill="url(#yolkGrad)"/>
-  <ellipse cx="55" cy="52" rx="5" ry="4" fill="#FFD280" opacity="0.7"/>
+  <ellipse cx="60" cy="62" rx="38" ry="45" fill="url(#eggGrad)" stroke="#D4C8B8" stroke-width="1.5" filter="url(#shadow)"/>
+  <ellipse cx="45" cy="45" rx="12" ry="18" fill="#FFFFFF" opacity="0.3"/>
+  <ellipse cx="60" cy="62" rx="20" ry="18" fill="url(#yolkGrad)"/>
+  <ellipse cx="54" cy="56" rx="6" ry="5" fill="#FFD280" opacity="0.5"/>
 </svg>
