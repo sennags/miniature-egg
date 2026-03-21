@@ -10,6 +10,16 @@
     let alarmInterval = null;
     const btnIcon = timerBtn.querySelector('.btn-icon');
 
+    const parseTime = (val) => {
+        const [mins, secs] = val.includes(':') ? val.split(':') : [val, '0'];
+        return parseFloat(mins) * 60 + parseFloat(secs);
+    };
+
+    const initTimer = () => {
+        totalSeconds = parseTime(timerDisplay?.dataset?.default || timerDisplay?.textContent);
+        updateDisplay();
+    };
+
     const playAlarm = () => {
         const playBeep = () => {
             const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
@@ -25,7 +35,6 @@
                 oscillator.start(startTime);
                 oscillator.stop(startTime + duration);
             };
-
             const now = audioCtx.currentTime;
             playTone(880, now, 0.15);
             playTone(1100, now + 0.12, 0.15);
@@ -37,32 +46,19 @@
     };
 
     const stopAlarm = () => {
-        if (alarmInterval) {
-            clearInterval(alarmInterval);
-            alarmInterval = null;
-        }
+        clearInterval(alarmInterval);
+        alarmInterval = null;
     };
 
     const updateDisplay = () => {
         const mins = Math.floor(totalSeconds / 60);
-        const secs = totalSeconds % 60;
+        const secs = Math.abs(totalSeconds % 60);
         timerDisplay.textContent = `${mins}:${secs.toString().padStart(2, '0')}`;
     };
 
     const setBtnState = (icon, text) => {
         btnIcon.textContent = icon;
         timerBtn.lastChild.textContent = ` ${text}`;
-    };
-
-    const resetToDefault = () => {
-        const defaultVal = timerDisplay.dataset.default || '3:00';
-        if (defaultVal.includes(':')) {
-            const [mins, secs] = defaultVal.split(':');
-            totalSeconds = parseInt(mins) * 60 + parseInt(secs);
-        } else {
-            totalSeconds = parseFloat(defaultVal) * 60;
-        }
-        updateDisplay();
     };
 
     const startTimer = () => {
@@ -102,15 +98,6 @@
         timerDisplay.parentElement.classList.remove('timer-running');
     };
 
-    const stopAndReset = () => {
-        stopAlarm();
-        isComplete = false;
-        resetToDefault();
-        setBtnState('▶', 'Iniciar');
-        timerBtn.classList.remove('paused');
-        timerDisplay.parentElement.classList.remove('timer-complete');
-    };
-
     const flashWarning = (btn) => {
         btn.classList.add('warning-flash');
         setTimeout(() => btn.classList.remove('warning-flash'), 500);
@@ -118,19 +105,16 @@
 
     timerBtn.addEventListener('click', () => {
         if (isComplete) {
-            stopAndReset();
+            stopAlarm();
+            isComplete = false;
+            initTimer();
+            setBtnState('▶', 'Iniciar');
+            timerBtn.classList.remove('paused');
+            timerDisplay.parentElement.classList.remove('timer-complete');
         } else if (isRunning) {
             pauseTimer();
         } else {
-            if (totalSeconds <= 0) {
-                const defaultVal = timerDisplay.dataset.default || '3:00';
-                if (defaultVal.includes(':')) {
-                    const [mins, secs] = defaultVal.split(':');
-                    totalSeconds = parseInt(mins) * 60 + parseInt(secs);
-                } else {
-                    totalSeconds = parseFloat(defaultVal) * 60;
-                }
-            }
+            if (totalSeconds <= 0) initTimer();
             updateDisplay();
             startTimer();
         }
@@ -145,8 +129,7 @@
         isComplete = false;
         document.querySelectorAll('.preset-btn').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-        const timeVal = parseFloat(btn.dataset.time);
-        totalSeconds = timeVal * 60;
+        totalSeconds = parseFloat(btn.dataset.time) * 60;
         updateDisplay();
         clearInterval(timerInterval);
         timerInterval = null;
@@ -156,15 +139,12 @@
         timerDisplay.parentElement.classList.remove('timer-complete');
     };
 
-    document.querySelectorAll('.preset-btn').forEach(btn => {
-        btn.addEventListener('click', () => selectPreset(btn));
-    });
+    document.querySelectorAll('.preset-btn').forEach(btn => btn.addEventListener('click', () => selectPreset(btn)));
 
     document.querySelectorAll('.steps-list a[href^="#timer-"]').forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
-            const targetId = link.getAttribute('href').substring(1);
-            const targetBtn = document.getElementById(targetId);
+            const targetBtn = document.getElementById(link.getAttribute('href').substring(1));
             if (targetBtn) {
                 selectPreset(targetBtn);
                 targetBtn.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -172,15 +152,5 @@
         });
     });
 
-    const initTimer = () => {
-        const defaultVal = timerDisplay?.dataset?.default || timerDisplay?.textContent;
-        if (defaultVal.includes(':')) {
-            const [mins, secs] = defaultVal.split(':');
-            totalSeconds = parseInt(mins) * 60 + parseInt(secs);
-        } else {
-            totalSeconds = parseFloat(defaultVal) * 60;
-        }
-        updateDisplay();
-    };
     initTimer();
 })();

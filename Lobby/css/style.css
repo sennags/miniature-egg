@@ -47,7 +47,6 @@ body {
 
 html {
     scroll-behavior: smooth;
-    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 .nav {
@@ -549,12 +548,6 @@ html {
 
     .footer {
         padding: 3rem 1.5rem 2rem;
-    }
-
-    .footer-icon {
-        width: 60px;
-        height: 60px;
-        margin-bottom: 1rem;
     }
 
     .footer-title {
