@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/recipe.css">
     <script src="../js/script.js" defer></script>
-    <script src="../js/timer.js" defer></script>
 </head>
 <body>
     <nav class="nav">
@@ -19,7 +18,7 @@
                 <span class="logo-text">Miniature-Egg</span>
             </a>
             <div class="nav-links">
-                <a href="#" class="nav-link">Sobre</a>
+                <a href="sobre.html" class="nav-link">Sobre</a>
                 <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">
                     <span class="theme-icon">◐</span>
                 </button>
@@ -31,17 +30,23 @@
         <header class="recipe-header">
             <img src="../Icons/ovo-frito.png" alt="Ovo Frito" class="recipe-icon">
             <h1 class="recipe-title"><span>Ovo</span> Frito</h1>
-            <p class="recipe-intro">O clássico que nunca sai de moda. Crocante na borda, mole no meio.</p>
+            <p class="recipe-intro">O clássico que nunca sai de moda. Na hora certa, fica perfeito!</p>
         </header>
 
         <div class="recipe-content">
+            <div class="recipe-card recipe-meta">
+                <div class="meta-item"><strong>Rendimento:</strong> 1 porção</div>
+                <div class="meta-item"><strong>Tempo:</strong> ~4 minutos</div>
+                <div class="meta-item"><strong>Dificuldade:</strong> Fácil</div>
+            </div>
+
             <div class="recipe-card">
                 <h2 class="recipe-section-title">Ingredientes</h2>
                 <ul class="ingredients-list">
-                    <li>1 ovo fresco</li>
+                    <li>1 ovo fresco (gelado da geladeira)</li>
                     <li>1 colher de sopa de manteiga ou óleo</li>
                     <li>Sal a gosto</li>
-                    <li>Pimenta do reino (opcional)</li>
+                    <li>Pimenta-do-reino moída na hora (opcional)</li>
                 </ul>
             </div>
 
@@ -50,44 +55,50 @@
                 <ol class="steps-list">
                     <li>
                         <span class="step-number">1</span>
-                        <span>Aqueça a frigideira em fogo médio-alto por 1-2 minutos</span>
+                        <span>Retire o ovo da geladeira e deixe em temperatura ambiente por 5 minutos (opcional, mas ajuda)</span>
                     </li>
                     <li>
                         <span class="step-number">2</span>
-                        <span>Adicione a manteiga e espere derreter até formar espuma</span>
+                        <span>Coloque a frigideira no fogo médio-alto e aqueça por 1-2 minutos</span>
                     </li>
                     <li>
                         <span class="step-number">3</span>
-                        <span>Quebre o ovo com cuidado, evitando romper a gema</span>
+                        <span>Teste do ponto: jogue uma gota d'água — se espirrar e pular, está no ponto</span>
                     </li>
                     <li>
                         <span class="step-number">4</span>
-                        <span>Tempere com sal e pimenta</span>
+                        <span>Adicione a manteiga e espere derreter até formar uma espuma leve e barulho crepitante</span>
                     </li>
                     <li>
                         <span class="step-number">5</span>
-                        <span>Cozinhe por 2-3 minutos até a clara firmar</span>
+                        <span>Quebre o ovo em um prato separado primeiro, depois deslize para frigideira (evita respingos e garante que a gema fique intacta)</span>
                     </li>
                     <li>
                         <span class="step-number">6</span>
-                        <span>Sirva imediatamente para melhor textura</span>
+                        <span>Tempere com sal e pimenta-do-reino</span>
+                    </li>
+                    <li>
+                        <span class="step-number">7</span>
+                        <span>Cozinhe sem mexer! Use a espátula para inclinar a frigideira e mover a clara cozida para o centro</span>
+                    </li>
+                    <li>
+                        <span class="step-number">8</span>
+                        <span>Sirva imediatamente — ovo frito não espera!</span>
                     </li>
                 </ol>
             </div>
 
-            <div class="timer-section">
-                <h2 class="timer-title">⏱️ Temporizador</h2>
-                <div class="timer-presets">
-                    <button class="preset-btn active" data-time="3">Padrão (3min)</button>
-                </div>
-                <div class="timer-display" id="timer" data-default="3:00">3:00</div>
-                <div class="timer-controls">
-                    <button class="timer-btn" id="timerBtn">
-                        <span class="btn-icon">▶</span>
-                        Iniciar
-                    </button>
-                </div>
+            <div class="recipe-card recipe-tips">
+                <h2 class="recipe-section-title">💡 Dicas do Chef</h2>
+                <ul class="tips-list">
+                    <li><strong>Gema mole:</strong> cozinhe 2 minutos de cada lado ou apenas 2 minutos de um lado</li>
+                    <li><strong>Gema média:</strong> cozinhe 3 minutos de um lado, vire rapidamente, espere 30 segundos</li>
+                    <li><strong>Gema cozida:</strong> tampe a frigideira nos últimos 2 minutos ou vire e cozinhe mais 2 minutos</li>
+                    <li><strong>Manteiga:</strong> dá sabor, mas queima rápido. Óleo é mais tolerante para iniciantes</li>
+                    <li><strong>Não perfure a gema</strong> ao virar — use uma espátula grande e plana</li>
+                </ul>
             </div>
+
         </div>
     </main>
 

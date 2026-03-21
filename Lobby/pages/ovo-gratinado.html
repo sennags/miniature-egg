@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ovo Gratinado - Miniature Egg</title>
+    <script>(function(){const d=new Date();const h=d.getHours();const m=d.getMinutes();const t=localStorage.getItem('theme')||((h>17||(h===17&&m>=30))||h<6||(h===6&&m<30)?'dark':'light');document.documentElement.setAttribute('data-theme',t);const i=document.querySelector('.theme-icon');if(i)i.textContent=t==='dark'?'☾':'☀';})();</script>
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/recipe.css">
+    <script src="../js/script.js" defer></script>
+    <script src="../js/timer.js" defer></script>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="home.html" class="logo">
+                <img src="../Icons/ovo-frito.svg" alt="Miniature Egg" class="logo-icon">
+                <span class="logo-text">Miniature-Egg</span>
+            </a>
+            <div class="nav-links">
+                <a href="sobre.html" class="nav-link">Sobre</a>
+                <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">
+                    <span class="theme-icon">◐</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="board">
+        <header class="recipe-header">
+            <img src="../Icons/ovo-gratinado.png" alt="Ovo Gratinado" class="recipe-icon">
+            <h1 class="recipe-title"><span>Ovo</span> Gratinado</h1>
+            <p class="recipe-intro">Ovos assados no forno com molho de tomate e parmesão dourado. Impressione-se!</p>
+        </header>
+
+        <div class="recipe-content">
+            <div class="recipe-card recipe-meta">
+                <div class="meta-item"><strong>Rendimento:</strong> 4 porções</div>
+                <div class="meta-item"><strong>Tempo:</strong> ~20 minutos</div>
+                <div class="meta-item"><strong>Dificuldade:</strong> Intermediário</div>
+            </div>
+
+            <div class="recipe-card">
+                <h2 class="recipe-section-title">Para o Molho</h2>
+                <ul class="ingredients-list">
+                    <li>2 colheres de sopa de azeite</li>
+                    <li>1 dente de alho picado (ou 2 dentes grandes)</li>
+                    <li>2 tomates maduros picados (ou 1 lata de molho de tomate)</li>
+                    <li>Sal a gosto</li>
+                    <li>Pimenta-do-reino a gosto</li>
+                    <li>Folhas de manjericão fresco (opcional, mas Recomendado!)</li>
+                </ul>
+            </div>
+
+            <div class="recipe-card">
+                <h2 class="recipe-section-title">Para Montar</h2>
+                <ul class="ingredients-list">
+                    <li>4 ovos (1 por refratário)</li>
+                    <li>100g de queijo parmesão ralado (ou muçarela para gratinar)</li>
+                    <li>Cebolinha ou salsinha picada para finalizar</li>
+                </ul>
+            </div>
+
+            <div class="recipe-card">
+                <h2 class="recipe-section-title">Modo de Preparo</h2>
+                <ol class="steps-list">
+                    <li>
+                        <span class="step-number">1</span>
+                        <span><strong>Prepare o molho:</strong> aqueça o azeite em uma panela média em fogo médio</span>
+                    </li>
+                    <li>
+                        <span class="step-number">2</span>
+                        <span>Doure o alho até sentir o aroma (30 segundos) — não deixe queimar!</span>
+                    </li>
+                    <li>
+                        <span class="step-number">3</span>
+                        <span>Adicione os tomates picados e refogue por 3-4 minutos até ficarem macios</span>
+                    </li>
+                    <li>
+                        <span class="step-number">4</span>
+                        <span>Tempere com sal, pimenta e, se usar, as folhas de manjericão</span>
+                    </li>
+                    <li>
+                        <span class="step-number">5</span>
+                        <span>Cozinhe em fogo baixo por 5 minutos até o molho engrossar levemente</span>
+                    </li>
+                    <li>
+                        <span class="step-number">6</span>
+                        <span>Pré-aqueça o forno a <strong>180°C</strong> (forno médio)</span>
+                    </li>
+                    <li>
+                        <span class="step-number">7</span>
+                        <span>Dividir o molho: coloque 2-3 colheres de sopa de molho no fundo de cada refratário</span>
+                    </li>
+                    <li>
+                        <span class="step-number">8</span>
+                        <span>Faça um "ninho" no centro com uma colher e <strong>quebre o ovo em um prato primeiro</strong>, depois deslize para o refratário (assim a gema fica intacta!)</span>
+                    </li>
+                    <li>
+                        <span class="step-number">9</span>
+                        <span>Polvilhe queijo parmesão por cima de cada ovo</span>
+                    </li>
+                    <li>
+                        <span class="step-number">10</span>
+                        <span>Leve ao forno por <strong>8-10 minutos</strong> — a clara deve estar firme, a gema ainda brilhando</span>
+                    </li>
+                    <li>
+                        <span class="step-number">11</span>
+                        <span>Retire com cuidado (os refratários estão quentes!), finalize com cebolinha e sirva imediatamente</span>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="recipe-card recipe-tips">
+                <h2 class="recipe-section-title">💡 Dicas do Chef</h2>
+                <ul class="tips-list">
+                    <li><strong>Ponto da gema:</strong> 8 min = gema mole e cremosa; 10 min = gema mais firme mas ainda úmida</li>
+                    <li><strong>Teste do forno:</strong> asse um ovo primeiro para calibrar o tempo. Fornos variam!</li>
+                    <li><strong>Molho先行:</strong> o molho evita que o ovo grude no refratário e adiciona sabor</li>
+                    <li><strong>Queijo extra:</strong> adicione cubinhos de muçarela no molho antes de colocar o ovo</li>
+                    <li><strong>Versão rápida:</strong> use molho de tomate pronto e vá direto para o passo 6</li>
+                    <li><strong>Presentação:</strong> sirva no próprio refratário com pão italiano para mergulhar!</li>
+                </ul>
+            </div>
+
+            <div class="timer-section">
+                <h2 class="timer-title">⏱️ Temporizador</h2>
+                <div class="timer-presets">
+                    <button class="preset-btn active" data-time="10">Forno (10min)</button>
+                </div>
+                <div class="timer-display" id="timer" data-default="10:00">10:00</div>
+                <div class="timer-controls">
+                    <button class="timer-btn" id="timerBtn">
+                        <span class="btn-icon">▶</span>
+                        Iniciar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <h3 class="footer-title">Bom apetite!</h3>
+            <p class="footer-text">
+                Porque bons ovos fazem bom dia.
+            </p>
+            <div class="footer-brand">
+                Feito com 💛 e ovos!
+            </div>
+            <span class="footer-brand">• miniature-egg •</span>
+        </div>
+    </footer>
+</body>
+</html>

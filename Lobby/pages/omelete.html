@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/recipe.css">
     <script src="../js/script.js" defer></script>
-    <script src="../js/timer.js" defer></script>
 </head>
 <body>
     <nav class="nav">
@@ -19,7 +18,7 @@
                 <span class="logo-text">Miniature-Egg</span>
             </a>
             <div class="nav-links">
-                <a href="#" class="nav-link">Sobre</a>
+                <a href="sobre.html" class="nav-link">Sobre</a>
                 <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">
                     <span class="theme-icon">◐</span>
                 </button>
@@ -29,20 +28,36 @@
 
     <main id="board">
         <header class="recipe-header">
-            <img src="../Icons/omelete.svg" alt="Omelete" class="recipe-icon">
+            <img src="../Icons/omelete.png" alt="Omelete" class="recipe-icon">
             <h1 class="recipe-title"><span>Ome</span>lete</h1>
-            <p class="recipe-intro">Fofinha e versátil. Perfeita para qualquer refeição do dia.</p>
+            <p class="recipe-intro">Fofinha e versátil. Perfeita para qualquer refeição do dia!</p>
         </header>
 
         <div class="recipe-content">
+            <div class="recipe-card recipe-meta">
+                <div class="meta-item"><strong>Rendimento:</strong> 1 porção grande</div>
+                <div class="meta-item"><strong>Tempo:</strong> ~7 minutos</div>
+                <div class="meta-item"><strong>Dificuldade:</strong> Fácil</div>
+            </div>
+
             <div class="recipe-card">
-                <h2 class="recipe-section-title">Ingredientes</h2>
+                <h2 class="recipe-section-title">Ingredientes da Base</h2>
                 <ul class="ingredients-list">
                     <li>2 ovos frescos</li>
-                    <li>1 colher de sopa de leite (opcional)</li>
+                    <li>1 colher de sopa de leite (opcional — deixa mais fofo)</li>
                     <li>1 colher de sopa de manteiga</li>
-                    <li>Sal e pimenta a gosto</li>
-                    <li>Recheio: queijo, presunto, tomate, etc</li>
+                    <li>Sal e pimenta-do-reino a gosto</li>
+                </ul>
+            </div>
+
+            <div class="recipe-card">
+                <h2 class="recipe-section-title">Sugestões de Recheio</h2>
+                <ul class="ingredients-list">
+                    <li><strong>Queijo:</strong> muçarela, cheddar, Minas frescal, gorgonzola</li>
+                    <li><strong>Presunto/Tomate:</strong> presunto ralado + tomate sem pele picado</li>
+                    <li><strong>Cebola e Queijo:</strong> cebola caramelizada com queijo</li>
+                    <li><strong>Ervas:</strong> salsinha, cebolinha, manjericão fresco</li>
+                    <li><strong>Combinação clássica:</strong> queijo + presunto + tomate</li>
                 </ul>
             </div>
 
@@ -51,44 +66,50 @@
                 <ol class="steps-list">
                     <li>
                         <span class="step-number">1</span>
-                        <span>Bata os ovos com leite, sal e pimenta em uma tigela</span>
+                        <span>Prepare o recheio primeiro: pique queijo, tomate, presunto etc.</span>
                     </li>
                     <li>
                         <span class="step-number">2</span>
-                        <span>Aqueça a manteiga na frigideira em fogo médio</span>
+                        <span>Bata os ovos com leite, sal e pimenta em uma tigela até ficar homogêneo (não precisa bater demais)</span>
                     </li>
                     <li>
                         <span class="step-number">3</span>
-                        <span>Despeje os ovos batidos e espalhe bem</span>
+                        <span>Aqueça a frigideira (ideal: 20cm de diâmetro) em fogo médio e adicione a manteiga</span>
                     </li>
                     <li>
                         <span class="step-number">4</span>
-                        <span>Mexa suavemente com uma espátula até firmar</span>
+                        <span>Quando a manteiga formar espuma, despeje os ovos e <strong>espere 10 segundos</strong> sem mexer</span>
                     </li>
                     <li>
                         <span class="step-number">5</span>
-                        <span>Adicione o recheio de um lado da omelete</span>
+                        <span>Com uma espátula, empurre as bordas levemente para o centro — deixe o centro fluir por baixo</span>
                     </li>
                     <li>
                         <span class="step-number">6</span>
-                        <span>Dobre ao meio e sirva imediatamente</span>
+                        <span>Quando a base estiver quase firme (mas ainda levemente úmida por cima), adicione o recheio em uma metade</span>
+                    </li>
+                    <li>
+                        <span class="step-number">7</span>
+                        <span>Aguarde 30 segundos, depois dobre ao meio com a espátula</span>
+                    </li>
+                    <li>
+                        <span class="step-number">8</span>
+                        <span>Deslize para o prato e sirva <strong>imediatamente</strong></span>
                     </li>
                 </ol>
             </div>
 
-            <div class="timer-section">
-                <h2 class="timer-title">⏱️ Temporizador</h2>
-                <div class="timer-presets">
-                    <button class="preset-btn active" data-time="5">Padrão (5min)</button>
-                </div>
-                <div class="timer-display" id="timer" data-default="5:00">5:00</div>
-                <div class="timer-controls">
-                    <button class="timer-btn" id="timerBtn">
-                        <span class="btn-icon">▶</span>
-                        Iniciar
-                    </button>
-                </div>
+            <div class="recipe-card recipe-tips">
+                <h2 class="recipe-section-title">💡 Dicas do Chef</h2>
+                <ul class="tips-list">
+                    <li><strong>Não adicione recheio muito cedo:</strong> ele vai queimar antes da omelete firmar</li>
+                    <li><strong>Fogo baixo é melhor:</strong> omelete em fogo alto fica seca e borra. Fogo médio-baixo = fofinha</li>
+                    <li><strong>Teste da espátula:</strong> se a omelete raspar fácil, está pronta para virar</li>
+                    <li><strong>Omelete francesa:</strong> é só parar no passo 5 — não dobra, serve aberta</li>
+                    <li><strong>Frigideira antiaderente:</strong> facilita muito! Unte levemente com manteiga</li>
+                </ul>
             </div>
+
         </div>
     </main>
 

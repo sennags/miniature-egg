@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre - Miniature Egg</title>
+    <script>(function(){const d=new Date();const h=d.getHours();const m=d.getMinutes();const t=localStorage.getItem('theme')||((h>17||(h===17&&m>=30))||h<6||(h===6&&m<30)?'dark':'light');document.documentElement.setAttribute('data-theme',t);const i=document.querySelector('.theme-icon');if(i)i.textContent=t==='dark'?'☾':'☀';})();</script>
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/recipe.css">
+    <script src="../js/script.js" defer></script>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="home.html" class="logo">
+                <img src="../Icons/ovo-frito.svg" alt="Miniature Egg" class="logo-icon">
+                <span class="logo-text">Miniature-Egg</span>
+            </a>
+            <div class="nav-links">
+                <a href="sobre.html" class="nav-link">Sobre</a>
+                <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">
+                    <span class="theme-icon">◐</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="board">
+        <header class="recipe-header">
+            <h1 class="recipe-title"><span>Sobre</span> o Projeto</h1>
+            <p class="recipe-intro">Todo dia um ovo. Todo dia uma oportunidade de aprender algo novo.</p>
+        </header>
+
+        <div class="recipe-content">
+            <div class="recipe-card">
+                <h2 class="recipe-section-title">A Origem</h2>
+                <p class="about-text">
+                    O Miniature Egg é um <strong>projeto pessoal de estudos</strong>. Nada mais é do que minha prática diária de código — um jeito de aprender e evoluir com HTML, CSS e JavaScript.
+                </p>
+                <p class="about-text">
+                    A ideia de fazer um site de receitas de ovos nasceu como uma forma de <strong>praticar funcionalidades reais</strong>: temporizadores, temas, animações, responsividade. Coisas que eu realmente usaria no dia a dia.
+                </p>
+            </div>
+
+            <div class="recipe-card">
+                <h2 class="recipe-section-title">O Que Fazemos</h2>
+                <p class="about-text">
+                    Hoje, o site reúne <strong>receitas testadas</strong>, <strong>temporizadores inteligentes</strong> e <strong>dicas que você só encontra em livros de culinária</strong>.
+                </p>
+                <p class="about-text">
+                    Cada receita foi pensada para ser simples, direta e com tudo que você precisa para acertar na primeira vez.
+                </p>
+            </div>
+
+            <div class="recipe-card">
+                <h2 class="recipe-section-title">O Objetivo</h2>
+                <p class="about-text">
+                    Este é um <strong>projeto em constante evolução</strong>. O objetivo é crescer — mais receitas, mais funcionalidades, mais aprendizado.
+                </p>
+            </div>
+
+            <div class="recipe-card recipe-tips">
+                <h2 class="recipe-section-title">📚 Tecnologias</h2>
+                <ul class="tips-list">
+                    <li><strong>HTML5</strong> — Estrutura semântica</li>
+                    <li><strong>CSS3</strong> — Estilos, animações e temas</li>
+                    <li><strong>JavaScript</strong> — Interatividade e temporizadores</li>
+                    <li><strong>Google Fonts</strong> — Tipografia personalizada</li>
+                    <li><strong>Web Audio API</strong> — Sons do alarme</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <h3 class="footer-title">Bom apetite!</h3>
+            <p class="footer-text">
+                Porque bons ovos fazem bom dia.
+            </p>
+            <div class="footer-brand">
+                Feito com 💛 e ovos!
+            </div>
+            <span class="footer-brand">• miniature-egg •</span>
+        </div>
+    </footer>
+</body>
+</html>

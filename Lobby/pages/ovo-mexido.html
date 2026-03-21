@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/recipe.css">
     <script src="../js/script.js" defer></script>
-    <script src="../js/timer.js" defer></script>
 </head>
 <body>
     <nav class="nav">
@@ -19,7 +18,7 @@
                 <span class="logo-text">Miniature-Egg</span>
             </a>
             <div class="nav-links">
-                <a href="#" class="nav-link">Sobre</a>
+                <a href="sobre.html" class="nav-link">Sobre</a>
                 <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">
                     <span class="theme-icon">◐</span>
                 </button>
@@ -29,19 +28,25 @@
 
     <main id="board">
         <header class="recipe-header">
-            <img src="../Icons/mexido.svg" alt="Ovo Mexido" class="recipe-icon">
+            <img src="../Icons/ovo-mexido.png" alt="Ovo Mexido" class="recipe-icon">
             <h1 class="recipe-title"><span>Ovo</span> Mexido</h1>
-            <p class="recipe-intro">Cremoso e macio. O acompanhamento perfeito para qualquer café.</p>
+            <p class="recipe-intro">Cremoso e macio. O acompanhamento perfeito para o café da manhã!</p>
         </header>
 
         <div class="recipe-content">
+            <div class="recipe-card recipe-meta">
+                <div class="meta-item"><strong>Rendimento:</strong> 1 porção</div>
+                <div class="meta-item"><strong>Tempo:</strong> ~4 minutos</div>
+                <div class="meta-item"><strong>Dificuldade:</strong> Fácil</div>
+            </div>
+
             <div class="recipe-card">
                 <h2 class="recipe-section-title">Ingredientes</h2>
                 <ul class="ingredients-list">
                     <li>2 ovos frescos</li>
-                    <li>1 colher de sopa de manteiga</li>
+                    <li>1 colher de sopa de manteiga (em temperatura ambiente)</li>
                     <li>Sal a gosto</li>
-                    <li>Salsinha picada (opcional)</li>
+                    <li>Salsinha ou cebolinha picada (opcional)</li>
                 </ul>
             </div>
 
@@ -50,44 +55,51 @@
                 <ol class="steps-list">
                     <li>
                         <span class="step-number">1</span>
-                        <span>Bata os ovos em uma tigela com sal</span>
+                        <span>Bata os ovos em uma tigela com sal até ficar homogêneo</span>
                     </li>
                     <li>
                         <span class="step-number">2</span>
-                        <span>Derreta a manteiga na frigideira em fogo baixo</span>
+                        <span>Corte a manteiga em cubos pequenos — vai ajudar a criar cremosidade</span>
                     </li>
                     <li>
                         <span class="step-number">3</span>
-                        <span>Adicione os ovos batidos</span>
+                        <span>Coloque a frigideira em fogo <strong>baixo</strong> (muito importante!)</span>
                     </li>
                     <li>
                         <span class="step-number">4</span>
-                        <span>Mexa constantemente com espátula em fogo baixo</span>
+                        <span>Adicione os ovos batidos e mexa <strong>constantemente</strong> com uma espátula de silicone ou madeira</span>
                     </li>
                     <li>
                         <span class="step-number">5</span>
-                        <span>Retire do fogo quando ainda estiver levemente úmido</span>
+                        <span>Mantenha o movimento: vá raspando o fundo e as laterais, formando "dobradinhas"</span>
                     </li>
                     <li>
                         <span class="step-number">6</span>
-                        <span>Decore com salsinha e sirva imediatamente</span>
+                        <span>Quando os ovos estiverem <strong>quase</strong> no ponto (ainda molinhos), retire do fogo</span>
+                    </li>
+                    <li>
+                        <span class="step-number">7</span>
+                        <span>Junte os cubos de manteiga e mexa até derreter e incorporar — isso dá cremosidade!</span>
+                    </li>
+                    <li>
+                        <span class="step-number">8</span>
+                        <span>Polvilhe salsinha, sirva em prato aquecido e coma <strong>imediatamente</strong></span>
                     </li>
                 </ol>
             </div>
 
-            <div class="timer-section">
-                <h2 class="timer-title">⏱️ Temporizador</h2>
-                <div class="timer-presets">
-                    <button class="preset-btn active" data-time="3">Padrão (3min)</button>
-                </div>
-                <div class="timer-display" id="timer" data-default="3:00">3:00</div>
-                <div class="timer-controls">
-                    <button class="timer-btn" id="timerBtn">
-                        <span class="btn-icon">▶</span>
-                        Iniciar
-                    </button>
-                </div>
+            <div class="recipe-card recipe-tips">
+                <h2 class="recipe-section-title">💡 Dicas do Chef</h2>
+                <ul class="tips-list">
+                    <li><strong>O segredo é fogo baixo:</strong> fogo alto = ovos secos e borrachudos. Fogo baixo = cremosos</li>
+                    <li><strong>Tire do fogo antes do ponto:</strong> ovos continuam cozinhando mesmo fora do fogo</li>
+                    <li><strong>Manteiga fria no final:</strong> é o truque profissional para cremosidade extra</li>
+                    <li><strong>Não use garfo:</strong> espátula de silicone é melhor para criar textura</li>
+                    <li><strong>Variação cremosa:</strong> adicione 1 colher de sopa de cream cheese no final para ficar ainda mais aveludado</li>
+                    <li><strong>Servir:</strong> ovo mexido não espera! Sirva em prato aquecido para não esfriar rápido</li>
+                </ul>
             </div>
+
         </div>
     </main>
 

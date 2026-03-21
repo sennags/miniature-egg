@@ -19,7 +19,7 @@
                 <span class="logo-text">Miniature-Egg</span>
             </a>
             <div class="nav-links">
-                <a href="#" class="nav-link">Sobre</a>
+                <a href="sobre.html" class="nav-link">Sobre</a>
                 <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">
                     <span class="theme-icon">◐</span>
                 </button>
@@ -29,19 +29,25 @@
 
     <main id="board">
         <header class="recipe-header">
-            <img src="../Icons/ovo-cozido.svg" alt="Ovo Cozido" class="recipe-icon">
+            <img src="../Icons/ovo-cozido.png" alt="Ovo Cozido" class="recipe-icon">
             <h1 class="recipe-title"><span>Ovo</span> Cozido</h1>
-            <p class="recipe-intro">Mole ou cozido? Descubra o ponto perfeito para você.</p>
+            <p class="recipe-intro">Mole ou cozido? Agora você controla o ponto!</p>
         </header>
 
         <div class="recipe-content">
+            <div class="recipe-card recipe-meta">
+                <div class="meta-item"><strong>Rendimento:</strong> 1 porção</div>
+                <div class="meta-item"><strong>Tempo:</strong> 6-12 minutos</div>
+                <div class="meta-item"><strong>Dificuldade:</strong> Fácil</div>
+            </div>
+
             <div class="recipe-card">
                 <h2 class="recipe-section-title">Ingredientes</h2>
                 <ul class="ingredients-list">
-                    <li>1 ovo fresco</li>
-                    <li>Água suficiente para cobrir o ovo</li>
-                    <li>Sal a gosto</li>
-                    <li>Gelo (opcional, para banho maria gelado)</li>
+                    <li>1 ovo fresco (da geladeira ou em temperatura ambiente)</li>
+                    <li>Água suficiente para cobrir o ovo (cerca de 1 dedo acima)</li>
+                    <li>Sal a gosto (para cozinhar)</li>
+                    <li>Gelo (opcional, para parar cozimento)</li>
                 </ul>
             </div>
 
@@ -50,36 +56,53 @@
                 <ol class="steps-list">
                     <li>
                         <span class="step-number">1</span>
-                        <span>Coloque água em uma panela funda e leve ao fogo alto</span>
+                        <span>Coloque os ovos em uma panela funda com água fria (os ovos devem ficar totalmente submersos)</span>
                     </li>
                     <li>
                         <span class="step-number">2</span>
-                        <span>Quando a água ferver, reduza para fogo médio</span>
+                        <span>Leve ao fogo alto até ferver — você verá bolhas grandes subindo</span>
                     </li>
                     <li>
                         <span class="step-number">3</span>
-                        <span>Com cuidado, mergulhe o ovo na água fervente</span>
+                        <span>Assim que ferver, <strong>desligue o fogo</strong> e tampe a panela</span>
                     </li>
                     <li>
                         <span class="step-number">4</span>
-                        <span>Cozinhe: 6-7 min para mole, 10-12 min para cozido</span>
+                        <span>Marque o tempo:
+                            <br>• <a href="#timer-6"><strong>6 minutos:</strong></a> gema líquida, clara firme
+                            <br>• <a href="#timer-8"><strong>8 minutos:</strong></a> gema cremosa, levemente mole no centro
+                            <br>• <a href="#timer-10"><strong>10 minutos:</strong></a> gema firme, mas úmida
+                            <br>• <a href="#timer-12"><strong>12 minutos:</strong></a> gema totalmente cozida, seca</span>
                     </li>
                     <li>
                         <span class="step-number">5</span>
-                        <span>Transfira para água gelada para parar o cozimento</span>
+                        <span>Transfira imediatamente para uma tigela com água gelada e gelo (isto para o cozimento e facilita descascar)</span>
                     </li>
                     <li>
                         <span class="step-number">6</span>
-                        <span>Descasque e sirva</span>
+                        <span>Deixe por 2-3 minutos, depois descasque começando pela base mais larga</span>
                     </li>
                 </ol>
+            </div>
+
+            <div class="recipe-card recipe-tips">
+                <h2 class="recipe-section-title">💡 Dicas do Chef</h2>
+                <ul class="tips-list">
+                    <li><strong>Ovo mais fácil de descascar:</strong> use ovos mais velhos (7-10 dias). Ovos muito frescos grudam na casca</li>
+                    <li><strong>Como saber se o ovo está fresco:</strong> coloque em água — se afundar de pé, é fresco; se boiar, está mais velho (bom para cozidos!)</li>
+                    <li><strong>Não ferva demais:</strong> cozimento longo deixa a gema esverdeada e com sabor forte</li>
+                    <li><strong>Panela funda:</strong> evita que os ovos batam entre si e quebrem</li>
+                    <li><strong>Crack da casca:</strong> bata levemente em uma superfície plana antes de cozinhar para descascar mais fácil depois</li>
+                </ul>
             </div>
 
             <div class="timer-section">
                 <h2 class="timer-title">⏱️ Temporizador</h2>
                 <div class="timer-presets">
-                    <button class="preset-btn active" data-time="6">Mole (6min)</button>
-                    <button class="preset-btn" data-time="10">Cozido (10min)</button>
+                    <button class="preset-btn active" data-time="6" id="timer-6">Mole (6min)</button>
+                    <button class="preset-btn" data-time="8" id="timer-8">Cremoso (8min)</button>
+                    <button class="preset-btn" data-time="10" id="timer-10">Firme (10min)</button>
+                    <button class="preset-btn" data-time="12" id="timer-12">Cozido (12min)</button>
                 </div>
                 <div class="timer-display" id="timer" data-default="6:00">6:00</div>
                 <div class="timer-controls">
